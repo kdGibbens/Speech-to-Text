@@ -1,16 +1,16 @@
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-const recognition = new SpeechRecognition();
+var recognition = new SpeechRecognition();
 recognition.interimResults = true;
 recognition.lang = 'en-US';
 
-let p = document.createElement('p');
-const speech = document.querySelector('.speech');
+var p = document.createElement('p');
+var speech = document.querySelector('.speech');
 speech.appendChild(p);
   
 
 recognition.addEventListener('result', e => {
-    const transcript = Array.from(e.results)
+    var transcript = Array.from(e.results)
       .map(result => result[0])
       .map(result => result.transcript)
       .join('');
